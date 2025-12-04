@@ -165,7 +165,7 @@ apple-disease-detection/
 │ ├── prediction_image_9.png
 │ └── prediction_image_10.png
 │
-└── test_images/
+├── test_images/
 │ ├── test1.jpg
 │ ├── test2.jpg
 │ └── test3.jpg
