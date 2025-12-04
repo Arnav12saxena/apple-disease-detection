@@ -134,6 +134,8 @@ Example prediction outputs on unseen test images:
 ---
 
 ## 🗂 Project Structure
+
+```
 apple-disease-detection/
 │── model.py # Model architecture & training pipeline
 │── apple_disease_model.h5 # Saved trained model (optional if <100MB)
@@ -156,6 +158,7 @@ apple-disease-detection/
 │
 └── test_images/
 ├── (sample test images)
+```
 
 ---
 
