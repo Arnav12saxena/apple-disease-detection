@@ -169,7 +169,6 @@ apple-disease-detection/
 │ └── test3.jpg
 │
 └── README.md
-
 ```
 
 ---
