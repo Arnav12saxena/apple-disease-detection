@@ -149,15 +149,27 @@ apple-disease-detection/
 │ ├── confusion_matrix_powdery_mildew.png
 │ ├── confusion_matrix_frog_eye_leaf_spot.png
 │ ├── confusion_matrix_complex.png
-│ ├── confusion_matrix_healthy.png
+│ └── confusion_matrix_healthy.png
 │
 ├── predictions/
 │ ├── prediction_image_1.png
 │ ├── prediction_image_2.png
-│ ├── ... (more prediction images)
+│ ├── prediction_image_3.png
+│ ├── prediction_image_4.png
+│ ├── prediction_image_5.png
+│ ├── prediction_image_6.png
+│ ├── prediction_image_7.png
+│ ├── prediction_image_8.png
+│ ├── prediction_image_9.png
+│ └── prediction_image_10.png
 │
 └── test_images/
-├── (sample test images)
+│ ├── test1.jpg
+│ ├── test2.jpg
+│ └── test3.jpg
+│
+└── README.md
+
 ```
 
 ---
