@@ -137,8 +137,10 @@ Example prediction outputs on unseen test images:
 
 ```
 apple-disease-detection/
-│── model.py # Model architecture & training pipeline
-│── apple_disease_model.h5 # Saved trained model (optional if <100MB)
+│── model.py
+│── train.csv
+│── submission.csv
+│── sample_submission.csv
 │── accuracy_metrics.txt
 │
 ├── results/
