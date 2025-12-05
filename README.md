@@ -38,12 +38,6 @@ https://www.kaggle.com/competitions/plant-pathology-2021-fgvc8/overview
 - Complex *(combined disease categories)*  
 - Healthy  
 
-**Data preprocessing included:**
-- Resizing  
-- Normalization  
-- Dataset splitting  
-- Label merging for “Complex” diseases  
-
 ---
 
 ## 🔧 Technologies Used
@@ -67,8 +61,6 @@ The model uses **MobileNetV2** pretrained on ImageNet as the frozen base.
 - `Dropout`
 - `Dense(6, activation='softmax')`
 
-This architecture balances **efficiency** and **accuracy**, making it ideal for agricultural disease classification.
-
 ---
 
 ## 🏋️ Training Process
@@ -76,19 +68,19 @@ This architecture balances **efficiency** and **accuracy**, making it ideal for 
 ### **1. Preprocessing**
 - Image resizing  
 - Normalization  
-- Label standardization  
+- Label merging  
 - Data augmentation:
   - Horizontal flips  
-  - Random rotations  
+  - Rotations  
+  - Brightness variations  
   - Shifts  
-  - Brightness adjustments  
 
 ### **2. Training Settings**
-- **Optimizer:** Adam  
-- **Loss:** Categorical Crossentropy  
-- **Callbacks:**  
-  - `EarlyStopping`  
-  - `ModelCheckpoint`
+- Optimizer: **Adam**  
+- Loss: **Categorical Crossentropy**  
+- Callbacks:
+  - EarlyStopping  
+  - ModelCheckpoint  
 
 ### **3. Final Outputs**
 
@@ -97,39 +89,54 @@ This architecture balances **efficiency** and **accuracy**, making it ideal for 
 | **Training Accuracy** | **91.59%** |
 | **Validation Accuracy** | **82.72%** |
 
-These metrics demonstrate strong generalization on a complex multi-class dataset.
-
 ---
 
 ## 📊 Results & Visualizations
 
-### 📈 Accuracy Curves
-`accuracy_curves.png`  
-Displays training vs validation accuracy trends.
+### 📈 Accuracy Curves  
+![Accuracy Curves](results/accuracy_curves.png)
 
-### 📉 Loss Curves
-`loss_curves.png`  
-Shows convergence behavior during training.
+---
+
+### 📉 Loss Curves  
+![Loss Curves](results/loss_curves.png)
+
+---
 
 ### 🧩 Confusion Matrices
-Individual confusion matrices for each disease class:
 
-- `confusion_matrix_scab.png`  
-- `confusion_matrix_rust.png`  
-- `confusion_matrix_powdery_mildew.png`  
-- `confusion_matrix_frog_eye_leaf_spot.png`  
-- `confusion_matrix_complex.png`  
-- `confusion_matrix_healthy.png`  
+#### Scab  
+![Scab](results/confusion_matrix_scab.png)
 
-These visualizations highlight model strengths and misclassification patterns.
+#### Rust  
+![Rust](results/confusion_matrix_rust.png)
 
-### 🖼 Sample Predictions  
-Example prediction outputs on unseen test images:
+#### Powdery Mildew  
+![Powdery Mildew](results/confusion_matrix_powdery_mildew.png)
 
-- `prediction_image_1.png`  
-- `prediction_image_2.png`  
-- ...  
-- `prediction_image_10.png`  
+#### Frog Eye Leaf Spot  
+![Frog Eye Leaf Spot](results/confusion_matrix_frog_eye_leaf_spot.png)
+
+#### Complex  
+![Complex](results/confusion_matrix_complex.png)
+
+#### Healthy  
+![Healthy](results/confusion_matrix_healthy.png)
+
+---
+
+### 🖼 Sample Predictions
+
+![Prediction 1](predictions/prediction_image_1.png)
+![Prediction 2](predictions/prediction_image_2.png)
+![Prediction 3](predictions/prediction_image_3.png)
+![Prediction 4](predictions/prediction_image_4.png)
+![Prediction 5](predictions/prediction_image_5.png)
+![Prediction 6](predictions/prediction_image_6.png)
+![Prediction 7](predictions/prediction_image_7.png)
+![Prediction 8](predictions/prediction_image_8.png)
+![Prediction 9](predictions/prediction_image_9.png)
+![Prediction 10](predictions/prediction_image_10.png)
 
 ---
 
@@ -177,11 +184,11 @@ apple-disease-detection/
 
 ## 🚀 Future Improvements
 
-- Use **EfficientNet-B0/B2** for better feature extraction  
-- Add **Grad-CAM** for explainable AI  
-- Perform **hyperparameter tuning** with Optuna  
-- Deploy using **FastAPI / Flask**  
-- Convert to **TensorFlow Lite** for mobile or edge devices  
+- Switch to **EfficientNet-B0/B2**  
+- Add **Grad-CAM visualizations**  
+- Hyperparameter tuning with Optuna  
+- Deploy via FastAPI  
+- Convert to TensorFlow Lite for mobile apps  
 
 ---
 
@@ -190,6 +197,3 @@ apple-disease-detection/
 **Arnav Saxena**  
 🔗 LinkedIn: https://www.linkedin.com/in/arnav-saxena-a9a217367  
 📧 Email: **arnav12saxena@gmail.com**
-
----
-
