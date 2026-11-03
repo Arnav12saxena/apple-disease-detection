@@ -1,15 +1,17 @@
 # 🍎 Apple Disease Detection — Deep Learning Project
 
-Automated classification of apple foliar diseases using transfer learning (**MobileNetV2**), data augmentation, and multi-class evaluation on high-variance leaf images.
+Automated classification of apple foliar diseases using transfer learning (**ResNet50**), data augmentation, and multi-class evaluation on high-variance leaf images.
 
 ---
 
 ## 📌 Overview
 
+**Project period:** 2025  
+
 Apple plants suffer from multiple foliar diseases that significantly reduce yield quality and quantity.  
 Manual disease identification is slow, labor-intensive, and prone to human error.
 
-This project builds a **deep learning model**, based on **MobileNetV2 + custom classification layers**, to classify apple leaf diseases into **6 categories** with high accuracy.  
+This project builds a **deep learning model**, based on a frozen **ImageNet-pretrained ResNet50** backbone and a custom classification head, to classify apple leaf diseases into **6 categories** with high accuracy.  
 The model was trained and evaluated on real-world leaf images from an **FGVC challenge dataset**.
 
 ---
@@ -44,7 +46,7 @@ https://www.kaggle.com/competitions/plant-pathology-2021-fgvc8/overview
 
 - Python  
 - TensorFlow / Keras  
-- **MobileNetV2** (Transfer Learning)  
+- **ResNet50** (Transfer Learning)  
 - OpenCV  
 - Matplotlib / Seaborn  
 - NumPy / Pandas  
@@ -53,13 +55,14 @@ https://www.kaggle.com/competitions/plant-pathology-2021-fgvc8/overview
 
 ## 🧠 Model Architecture
 
-The model uses **MobileNetV2** pretrained on ImageNet as the frozen base.
+The model uses **ResNet50** pretrained on ImageNet as the frozen base.
 
-**Custom classification head:**
+**Custom classification head (as implemented in `model.py`):**
 - `GlobalAveragePooling2D`
-- `Dense(128, activation='relu')`
-- `Dropout`
-- `Dense(6, activation='softmax')`
+- `Dense(1024, activation='relu')`
+- `Dense(6, activation='sigmoid')`
+
+All layers in the pretrained ResNet50 backbone are frozen in the checked-in training script.
 
 ---
 
@@ -195,5 +198,5 @@ apple-disease-detection/
 ## 📬 Contact
 
 **Arnav Saxena**  
-🔗 LinkedIn: https://www.linkedin.com/in/arnav-saxena-a9a217367  
+🔗 LinkedIn: https://www.linkedin.com/in/arnav-saxena-39113a3a0  
 📧 Email: **arnav12saxena@gmail.com**
